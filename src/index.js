@@ -2,6 +2,7 @@
 
 const { ArgumentParser } = require('argparse');
 const { version } = require('../package.json');
+const provisionDB = require('./provision_db/provision');
 
 
 // main

@@ -1,5 +1,6 @@
 FROM node:latest
 
+ENV MODE=http
 ENV APP_PATH=/var/app
 ENV NODE_PATH=$APP_PATH/node_modules
 # Install app dependencies
@@ -18,4 +19,4 @@ RUN npm install -g nodemon --no-optional
 EXPOSE 8080
 WORKDIR $APP_PATH/src
 #ENTRYPOINT nodemon index.s
-CMD nodemon NODE_PATH=$NODE_PATH /var/app/src/index.js --mode=http
+CMD nodemon NODE_PATH=$NODE_PATH /var/app/src/index.js --mode=$MODE
